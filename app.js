@@ -41,13 +41,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 // )
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('search')
-})
-// Create route for results
-app.get('/results', (req, res) => {
-  res.render('results')
-})
+app.use('/', require('./controllers/search.js'))
+app.use('/results', require('./controllers/results.js'))
+
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404))
