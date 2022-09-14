@@ -11,4 +11,6 @@ router.get('/', (req, res) => {
 router.POST('/', (req, res) => {
   res.render('results')
 })
+
 // Export module
+module.exports = router
