@@ -4,54 +4,68 @@ const router = express.Router()
 
 // Create POST controller
 router.get('/', (req, res) => {
-  res.render('results')
+  res.render('results', { data: data })
 })
 
 //Results Array
 
-let resArr = [
+const data = [
   {
-    title: 'JS tutorials',
-    description: 'The best JavaScript tutorials in the galaxy!',
+    title: 'JavaScript Tutorial - W3School',
+    description:
+      'Well organized and easy to understand Web building tutorials with lots	of examples of how to use HTML',
     url: 'https://www.w3schools.com',
     links: [
       {
-        title: 'JS for Beginners',
-        url: 'https://www.w3schools.com/js'
+        title: 'JavaScript Introduction',
+        url: 'https://www.w3schools.com/js/js_intro.asp'
       },
       {
-        title: 'JS for the Web',
-        url: 'https://www.w3schools.com/js'
+        title: 'JS Functions',
+        url: 'https://www.w3schools.com/js/js_functions.asp'
+      },
+      {
+        title: 'JavaScript Examples',
+        url: 'https://www.w3schools.com/js/js_examples.asp'
       }
     ]
   },
   {
-    title: 'Test 2',
-    description: 'stuff2',
-    url: 'https://www.w3schools.com',
+    title: 'JavaScript | MDN',
+    description:
+      'JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting langauge for Web pages, CouchDB, and Adobe Acrobat.',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     links: [
       {
-        title: '2222',
-        url: 'https://www.w3schools.com/js'
+        title: 'JavaScript Basics',
+        url:
+          'https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics'
       },
       {
-        title: '22222',
-        url: 'https://www.w3schools.com/js'
+        title: 'JavaScript reference',
+        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference'
+      },
+      {
+        title: 'About JavaScript',
+        url:
+          'https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript'
       }
     ]
   },
   {
-    title: 'Test 3',
-    description: 'stuff3',
-    url: 'https://www.w3schools.com',
+    title: 'JavaScript - Wikipedia',
+    description:
+      'JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time.',
+    url: 'https://en.wikipedia.org/wiki/JavaScript',
     links: [
       {
-        title: '3333',
-        url: 'https://www.w3schools.com/js'
+        title: 'JavaScript Syntax',
+        url: 'https://en.wikipedia.org/wiki/JavaScript_syntax'
       },
       {
-        title: '33333',
-        url: 'https://www.w3schools.com/js'
+        title: 'JavaScript Definition',
+        url:
+          'https://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_web_frameworks'
       }
     ]
   }
