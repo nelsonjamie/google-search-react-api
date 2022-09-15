@@ -4,12 +4,12 @@ const router = express.Router()
 
 // Create POST controller
 router.get('/', (req, res) => {
-  res.render('results', { data: data })
+  res.render('results', { results: results })
 })
 
 //Results Array
 
-const data = [
+const results = [
   {
     title: 'JavaScript Tutorial - W3School',
     description:
