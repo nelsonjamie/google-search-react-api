@@ -10,17 +10,17 @@
       </form>
     </header>
 	  <main>
-      <span class="numres">{{data.length}} Results</span>
-			{{#each data as |element|}}
+      <span class="numres">{{results.length}} Results</span>
+			{{#each results as |result|}}
 		  <div class="results">
 
         <h2>
-          <a href="{{element.url}}"
-            >{{element.title}}</a
+          <a href="{{result.url}}"
+            >{{result.title}}</a
           >
         </h2>
         <p>
-        {{element.description}}
+        {{result.description}}
         </p>
         <ul>
           <li>
