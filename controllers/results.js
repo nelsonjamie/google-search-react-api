@@ -2,16 +2,6 @@
 const express = require('express')
 const router = express.Router()
 
-// Create POST controller
-router.post('/', (req, res) => {
-  res.render('results', { results })
-  console.log(req.body)
-})
-
-router.get('/', (req, res) => {
-  res.render('results', { results })
-})
-
 //Results Array
 
 const results = [
@@ -75,6 +65,20 @@ const results = [
     ]
   }
 ]
+
+// Create POST controller
+
+router.post('/', (req, res) => {
+  let matches = results.filter(el => {
+    return el.title == req.body.search
+  })
+  console.log(matches)
+  res.render('results', { results: matches })
+  console.log('It worked')
+})
+router.get('/', (req, res) => {
+  res.render('results', { results })
+})
 
 // Export module
 module.exports = router
