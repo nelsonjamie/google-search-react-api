@@ -5,6 +5,7 @@ const router = express.Router()
 // Create POST controller
 router.post('/', (req, res) => {
   res.render('results', { results })
+  console.log(req.body)
 })
 
 router.get('/', (req, res) => {
