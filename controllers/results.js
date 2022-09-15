@@ -3,8 +3,12 @@ const express = require('express')
 const router = express.Router()
 
 // Create POST controller
+router.post('/', (req, res) => {
+  res.render('results', { results })
+})
+
 router.get('/', (req, res) => {
-  res.render('results', { results: results })
+  res.render('results', { results })
 })
 
 //Results Array
