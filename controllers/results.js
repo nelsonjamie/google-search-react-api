@@ -26,7 +26,7 @@ const results = [
     ]
   },
   {
-    title: 'JavaScript | MDN',
+    title: 'JavaScript Tutorial| MDN',
     description:
       'JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting langauge for Web pages, CouchDB, and Adobe Acrobat.',
     url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
@@ -70,7 +70,10 @@ const results = [
 
 router.post('/', (req, res) => {
   let matches = results.filter(el => {
-    return el.title == req.body.search
+    return (
+      el.title.includes(req.body.search) ||
+      el.description.includes(req.body.search)
+    )
   })
   console.log(matches)
   res.render('results', { results: matches })
