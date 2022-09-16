@@ -1,0 +1,25 @@
+<main class='result'>
+	<span class="numres">{{results.length}} Results</span>
+	{{#each results as |result|}}
+	<div class="results">
+
+		<h2>
+			<a href="{{result.url}}"
+				>{{result.title}}</a
+			>
+		</h2>
+		<p>
+		{{result.description}}
+		</p>
+		<ul>
+			<li>
+				{{#each links as |link|}}
+				<a class="sm" href="{{link.url}}"
+					>{{link.title}}</a
+				>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+	{{/each}}
+</main>
