@@ -1,14 +1,19 @@
 <header>
       <div>
-				<a href="/search">
+				<a href="/">
         <img class="logoresults" src="img/google.png" alt="Google logo" />
 				</a>
       </div>
-      <form>
-        <input type="text" name="searchres2"  />
+      <form action="/results" method="post">
+        <input type="text" name="search"  autofocus/>
         <button class="primary resultspage">
           Search
         </button>
       </form>
     </header>
-		<main>{{>result}}</main>
+			<main class='result'>
+				<span class="numres">{{results.length}} Results</span>
+				{{#each results as |result|}}
+					{{>result result=result}}
+				{{/each}}
+			</main>
