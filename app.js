@@ -40,9 +40,20 @@ mongoose.connect(
   }
 )
 
+const Results = require('./models/results')
+
 // Routes
 app.use('/', require('./controllers/search'))
 app.use('/results', require('./controllers/results'))
+
+app.post('/results', async (req, res) => {
+  let searchResults = await Results.find().or([
+    { title: { $regex: req.body.search, $options: 'i' } },
+    { description: { $regex: req.body.search, $options: 'i' } }
+  ])
+  console.log(searchResults)
+  res.render('results', { results: searchResults })
+})
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
