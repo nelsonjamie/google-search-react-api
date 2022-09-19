@@ -17,3 +17,5 @@ let Results = mongoose.model('results', {
   },
   links: [{ title: String, url: String }]
 })
+
+module.exports = Results
